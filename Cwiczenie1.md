@@ -55,8 +55,5 @@ dana calkowita liczba k (1 <= k <= 180) i ciag lizcb 10111213..9899, do ktorego 
   return liczba_armst
   }
   }
-  
-  
-  
   }
   ```
