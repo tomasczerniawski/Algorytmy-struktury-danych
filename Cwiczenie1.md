@@ -31,7 +31,7 @@ dana calkowita liczba k (1 <= k <= 180) i ciag lizcb 10111213..9899, do ktorego 
   return numer_pary
   )
  ```
-  # Zadanie 3
+  # Zadanie 4
   liczba naturalna z n cyfr jst liczba Armstronga, jezelu suma jego liczb w pierwaztku n, jest rowna samej liczbie. Naprzyklad, 153 = 1^3 + 5^3 + 3^3. Napisac program otrzymania wszykich liczb Armstronga, z 3 i 4 liczb.
   ```
   liczb_armst(liczb, count){
@@ -57,3 +57,23 @@ dana calkowita liczba k (1 <= k <= 180) i ciag lizcb 10111213..9899, do ktorego 
   }
   }
   ```
+   # Zadanie 5
+   ```
+ Lista jednokierunkowa jest strukturą o dynamicznie zmieniającej się wielkości. Listę można opisać jako uszeregowany zbiór elementów. Każdy element zawiera jakieś dane oraz wskazuje na swojego następc  
+ 
+ Listę dwukierunkową - każdy element listy połączony jest z elementem następnym oraz poprzednim. Listę dwukierunkową możemy przechodzić w obu kierunkach - od pierwszego elementu do ostatniego lub od ostatniego do pierwszego.
+   
+   Cykliczna lista jednokierunkowa jest zwykłą listą jednokierunkową. Różnica polega jedynie na tym, iż pole next  ostatniego elementu wskazuje na pierwszy element listy. Zmienna head  wskazuje nie początek, lecz punkt wejścia do pierścienia, który tworzą elementy listy jednokierunkowej.
+
+   
+   
+   ```
+   
+   
+   
+   
+   
+   
+   
+   
+   
