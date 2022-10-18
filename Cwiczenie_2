@@ -1,1 +1,14 @@
+# Zadanie 1
 
+Factorial
+```
+factorial(fact,n){
+fact=1
+
+ for(i=1;i<=n;i++){
+ 
+ fact=fact*i
+ }
+}
+// Jezeli podamy liczbe 5 dla n (n=5) to w foru bedzie poruwnywana od jedynki do 5 i zamiast i bedzie wpisywana o jedna jednostka wiecej czym n i puzniej z mienna fact bedzie mnozona na kazda i ktura z tego wyszla to 5!=5*4*3*2*1;
+```
