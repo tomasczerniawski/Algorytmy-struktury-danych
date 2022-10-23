@@ -28,7 +28,7 @@ NWD
 
 
 ```
-# Zadanie 3
+# Zadanie 4
 Srednia arytmetyczna
  
 ```
@@ -46,4 +46,37 @@ for(i=0;i<n;i++){
 }
 Z (forem) robimy loop gdzie (n) jest ilosc liczb w tabeli i w sriodku  (fora) jest obliczana suma tych liczb podstawia zamias (liczby[i] ) ilbe na pozycji zerowej i dodaje sume poprzedniego wyniku np. (suma(0)=liczby[0](2)+suma(0) to ruwnas 2 puzniej suma(2)=liczby[1](4)+suma(2)=6) puzniej wynik jest dzielony na (n) ilosc liczb
 ```
+# Zadanie 5
+Wyszukiwanie maksimum (minimum) w tablice liczb naturalnych
+```
+maksymum(zbiur,max){
+ max = zbiur[0]
+ 
+	for( i = 0;i<n;i++) {
+ 
+		if(max<zbiur[i]) {
+  
+			 max = zbiur[i];	
+		}
+	}
+ return max;
+ }
+ 
+minimum(zbiur, min){
+ min = zbiur[0];
+ 
+	for( i = 0;i<n;i++) {
+ 
+		if(min>zbiur[i]) {
+  
+			 min = zbiur[i];
+			
+		}
+	}
+ return min
+}
 
+Spoczatku przeruwnujemy liczbe ktura jest na zerowej pozycji jako maksymum tej tablicy i wprowadzamy petle for zeby poruwnac kazda liczbe w tabeli i sprawdzamy przez if jezeli  if jest prawdziwy to zamiast maksymuma wprowadzasie nowa zmienna itakie robi dobukej nieporuwna wszytkie liczby w tabeli 
+A w minimu wzystko tosamo tyko szuk mniejszej liczby
+
+```
