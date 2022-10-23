@@ -20,3 +20,30 @@ Iloczyn i reszta. Realizacja z warunkem pocztkawym calkowita liczba - n, wyjsce 
 
 
 ```
+# Zadanie 3
+
+NWD 
+```
+
+
+
+```
+# Zadanie 3
+Srednia arytmetyczna
+ 
+```
+obliczenie_sriedniej(n,liczby[]){
+suma=0
+i=0
+
+for(i=0;i<n;i++){
+
+  suma=liczby[i]+suma
+
+}
+  sriednia=suma/n
+  return sriednia
+}
+Z (forem) robimy loop gdzie (n) jest ilosc liczb w tabeli i w sriodku  (fora) jest obliczana suma tych liczb podstawia zamias (liczby[i] ) ilbe na pozycji zerowej i dodaje sume poprzedniego wyniku np. (suma(0)=liczby[0](2)+suma(0) to ruwnas 2 puzniej suma(2)=liczby[1](4)+suma(2)=6) puzniej wynik jest dzielony na (n) ilosc liczb
+```
+
