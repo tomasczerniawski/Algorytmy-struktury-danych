@@ -24,9 +24,21 @@ Iloczyn i reszta. Realizacja z warunkem pocztkawym calkowita liczba - n, wyjsce 
 
 NWD 
 ```
+NWD(zbiur, max){
+for(int i =1; i<98;i++) {
+		zbiur[i]=zbiur[i]+i;
+		}
+	
+	max=zbiur[0];
+	for(int i = 1; i<98;i++) {
+		if(a % zbiur[i] == 0 && b % zbiur[i] == 0) {
+			max=zbiur[i];
+		}
+	}
+	retun max
+	}
 
-
-
+Pierwszy for zapelnia automatycznie tabele do 98 drugi for puska petle aby sprawdzic przez if maksymalny dzielni  (jezeli a = 4 b = 14 to w ifie podstawujisie pierwsza liczba tabelki to 1 przeruwnuje do max puzniej poruwnuje dodrugiej liczby i tak do puki nie przestanie byc if prawdziwy i jak przestanie to ostatnia liczba bedzi maksymalnym dzilnikiem )
 ```
 # Zadanie 4
 Srednia arytmetyczna
