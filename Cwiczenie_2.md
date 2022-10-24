@@ -16,7 +16,14 @@ fact=1
 
 Iloczyn i reszta. Realizacja z warunkem pocztkawym calkowita liczba - n, wyjsce licby(lista) - q i r
 ```
+ilocyzn_reszta(iloczyn reszta){
+q=iloczyn
+r=reszta
+iloczyn=n*d
 
+reszta= iloczyn%n
+return iloczyn reszta
+}
 
 
 ```
