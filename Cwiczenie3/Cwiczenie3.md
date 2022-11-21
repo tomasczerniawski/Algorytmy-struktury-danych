@@ -29,36 +29,6 @@ n,
 
 # Oblicz złożoność czasową dla każdego fragmentu kodu ćwiczenia.
 
-1 function someFunction(n) {  
-2       i, j = 0;  
-3       for (i; i < n*1000 ; i++) {  
-4           for (j; j < n*20; j++) {  
-5               printf("%d", i + j);  
-6           }  
-7       }  
-9   }  
-
-Dominujace linii: 3,4,5  
-Niedominujace linii: 2 
-Złożoność kwadratowa 
-
-
-1 function someFunction(n) {  
-2       i, j, k, l = 0;  
-3       for (i; i < n ; i++) {  
-4           for (j; j < n; j++) {  
-5               for (k; k < n; k++) {  
-6                   for (l; l < 10; l++) {  
-7                       printf("%d", i + j + k + l);  
-8                   }  
-9              }  
-10           }  
-11       }  
-12  }  
- 
-Dominujace linii: 3, 4, 5, 6 
-Niedominujace linii: 2 
-Złożoność do 4 potęgi
 
 
 # Notacja Big-O
