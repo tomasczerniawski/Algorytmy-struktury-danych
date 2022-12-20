@@ -1,3 +1,28 @@
+# Sortowanie prior
+ 
+```
+function prior(array, index, index2) {
+  if (array[index] <= array[index2]) {
+	return true;
+  }
+
+  return false;
+}
+
+
+```
+# Sortowanie swap
+ 
+```
+function swap(array, index, index2) {
+  temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+}
+
+
+```
+
 # Sortowanie bąbelkowe
  
 ```
