@@ -157,7 +157,7 @@ Przykład używania
 
 Using Miller-Rabin Algorithm, we can test the number 341 as follows −
 
- Step1: $341 − 1 = 2^2 x 85$. Thus p = 341, k = 2 and q = 85
+ Step1: $341 − 1 = 2^2$ x 85. Thus p = 341, k = 2 and q = 85
 Step2: x = 2 (given)
 Step3: S = x mod p
          = 285 mod 341 = (210) x 25 mod 341 8
