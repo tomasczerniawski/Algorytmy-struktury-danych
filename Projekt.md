@@ -187,3 +187,137 @@ W porównaniu z testami Eulera i Solovaya-Strassena test Millera Rabina jest bar
 
 Zgodnie z testem fermata jest zbyt wielu kłamców dla wszystkich liczb Carmichaela n, prawdopodobieństwo błędu jest bliskie 1, ta wada jest zapobiegana u Millera Rabina.
 
+
+
+**-Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu. **
+
+Używałem KMP Algorytmu
+ Używamy wartości z lps[], aby określić następną pozycję przesuwania. Kiedy porównujemy pat[j] z txt[i] i widzimy niezgodność, wiemy, że znaki pat[0..j-1] pasują do txt[i-j+1…i-1], wiemy też, że lps[j-1] znaki pat[0…j-1] są zarówno właściwym przedrostkiem, jak i sufiksem, co oznacza, że nie musimy dopasowywać tych znaków lps[j-1] do txt[i-j…i-1], ponieważ wiemy że te znaki i tak będą pasować.
+ 
+ ![image](https://user-images.githubusercontent.com/115027239/213924490-3feafbbd-2770-4ee0-a769-911217a51d14.png)
+
+**Pseudokod**
+```
+KMPSearch(pat, txt){
+   
+    computeLPSArray(pat, M, lps)
+    
+    while i < N
+        if pat[j] == txt[i]
+            j++
+            i++
+        if j == M
+            print "znaleziono na indeksie", i - j
+            j = lps[j - 1]
+        if i < N and pat[j] != txt[i]
+            if j != 0
+                j = lps[j - 1]
+            else
+                i = i + 1
+procedure computeLPSArray(pat, M, lps)
+   
+    while i < M
+        if pat[i] == pat[len]
+            len++
+            lps[i] = len
+            i++
+        else // pat[i] != pat[len]
+            if len != 0
+                len = lps[len - 1]
+                
+            else // len == 0
+                lps[i] = 0
+                i++
+}
+```
+
+**Kod** 
+
+```
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+ 
+void computeLPSArray(char *pat, int M, int *lps);
+ 
+void KMPSearch(char *pat, char *txt) {
+    int M = strlen(pat);
+    int N = strlen(txt);
+ 
+    
+    int *lps = (int *) malloc(sizeof(int) * M);
+    int j = 0; 
+ 
+   
+    computeLPSArray(pat, M, lps);
+ 
+    int i = 0; 
+    while (i < N) {
+        if (pat[j] == txt[i]) {
+            j++;
+            i++;
+        }
+ 
+        if (j == M) {
+            printf("Znaleziono na indeksie %d \n", i - j);
+            j = lps[j - 1];
+        }
+ 
+    
+        else if (i < N && pat[j] != txt[i]) {
+           
+            if (j != 0)
+                j = lps[j - 1];
+            else
+                i = i + 1;
+        }
+    }
+    free(lps); 
+}
+ 
+void computeLPSArray(char *pat, int M, int *lps) {
+    int len = 0; 
+    int i;
+ 
+    lps[0] = 0; 
+    i = 1;
+ 
+    
+    while (i < M) {
+        if (pat[i] == pat[len]) {
+            len++;
+            lps[i] = len;
+            i++;
+        } else 
+        {
+            if (len != 0) {
+                
+                len = lps[len - 1];
+ 
+               
+            } else
+            {
+                lps[i] = 0;
+                i++;
+            }
+        }
+    }
+}
+ 
+
+int main() {
+    char *txt = "ABABDABACDABABCABAB";
+    char *pat = "ABABCABAB";
+    KMPSearch(pat, txt);
+    return 0;
+}
+```
+ zaleta algorytmu KMP
+ 
+KMP ma tę zaletę, że gwarantuje skuteczność w najgorszym przypadku. Czas przetwarzania wstępnego to zawsze O(n), a czas wyszukiwania to zawsze O(m). Nie ma najgorszych danych wejściowych.
+W przypadkach, gdy szukasz bardzo długich ciągów (duże n) wewnątrz naprawdę dużych ciągów (duże m), może to być bardzo pożądane w porównaniu z innymi algorytmami.
+
+
+
+
+
