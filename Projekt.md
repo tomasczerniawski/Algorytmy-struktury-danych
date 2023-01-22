@@ -5,7 +5,7 @@
  - Algorytm szybkiego sortowania listy dwukierunkowej.
 
 
-**Autor Tomas Czerniawski Student 2 roku Informatyki**
+                                   **Autor Tomas Czerniawski Student 2 roku Informatyki**
 
  1. Test Millera-Rabina.
 
