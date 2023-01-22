@@ -1,0 +1,3 @@
+ - Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina.
+ - Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu. 
+ - Algorytm szybkiego sortowania listy dwukierunkowej.
