@@ -155,26 +155,36 @@ Czy jest (x + y)² ∊ Θ(x² + y²)?
 
 Przykład używania
 
-Using Miller-Rabin Algorithm, we can test the number 341 as follows −
+Korzystając z algorytmu Millera-Rabina, możemy przetestować liczbę 341 w następujący sposób −
 
- Step1: $341 − 1 = 2^2$ x 85. Thus p = 341, k = 2 and q = 85
+ Krok 1: $341 − 1 = 2^2$ x 85. Zatem p = 341, k = 2 and q = 85
  
-Step2: x = 2 (given)
+Krok 2: x = 2 (dany)
 
-Step3: $S = x^q$ mod p
+Krok 3: $S = x^q$ mod p
          = $2^{85}$  mod 341 = $(2^{10})$ x $2^5$ mod 341 8
          = $2^{10}$ mod 341 x $2^{13}$ mod 341
          = 1 x 8192 mod 341 = 8192 mod 341
          = 8
          
-Step4: As 8 ≠ 1, we move to the next step.
+Krok 4: Ponieważ 8 ≠ 1 przechodzimy do następnego kroku.
 
-Step5: For j = 1, $S = x^{2q}$ mod p
+Krok 5: dla j = 1, $S = x^{2q}$ mod p
          = $2^{170}$ mod 341 = $(2^{20})^8$ x $2^{10}$ mod 341
          = $2^{20}$ mod 341 x $2^8$ mod 341 x $2^{10}$ mod 341
          = 1 x 256 x 1 = 256
-Now, = 256 ≠ 1
+teraz, = 256 ≠ 1
 
-and result is inconclusive
-So, 341 is not a composite number.
+**i wynik jest niejednoznaczny
+Zatem 341 nie jest liczbą złożoną.**
+
+**Zalety**
+
+Algorytm ten może być używany do testowania pierwszorzędności dużych liczb.
+
+Ze względu na przewagę szybkości w porównaniu z innymi testami pierwszości, test Millera Rabina będzie testem z wyboru w kilku zastosowaniach kryptograficznych.
+
+W porównaniu z testami Eulera i Solovaya-Strassena test Millera Rabina jest bardziej dynamiczny, a istotnym aspektem jest zmniejszenie prawdopodobieństwa niepowodzenia.
+
+Zgodnie z testem fermata jest zbyt wielu kłamców dla wszystkich liczb Carmichaela n, prawdopodobieństwo błędu jest bliskie 1, ta wada jest zapobiegana u Millera Rabina.
 
