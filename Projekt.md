@@ -162,16 +162,16 @@ Using Miller-Rabin Algorithm, we can test the number 341 as follows −
 Step2: x = 2 (given)
 
 Step3: $S = x^q$ mod p
-         = $2^{85}$  mod 341 = $(2^1^0)$ x $2^5$ mod 341 8
-         = $2^1^0$ mod 341 x $2^1^3$ mod 341
+         = $2^{85}$  mod 341 = $(2^{10})$ x $2^5$ mod 341 8
+         = $2^{10}$ mod 341 x $2^{13}$ mod 341
          = 1 x 8192 mod 341 = 8192 mod 341
          = 8
          
 Step4: As 8 ≠ 1, we move to the next step.
 
-Step5: For j = 1, $S = x^2^q$ mod p
-         = $2^1^7^0$ mod 341 = $(2^2^0)^8$ x $2^1^0$ mod 341
-         = $2^2^0$ mod 341 x $2^8$ mod 341 x $2^1^0$ mod 341
+Step5: For j = 1, $S = x^{2q}$ mod p
+         = $2^{170}$ mod 341 = $(2^{20})^8$ x $2^{10}$ mod 341
+         = $2^{20}$ mod 341 x $2^8$ mod 341 x $2^{10}$ mod 341
          = 1 x 256 x 1 = 256
 Now, = 256 ≠ 1
 
