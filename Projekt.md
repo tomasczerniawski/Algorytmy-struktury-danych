@@ -151,7 +151,6 @@ int main()
     return 0;
 }
 ```
-Czy jest (x + y)² ∊ Θ(x² + y²)?
 
 Przykład używania
 
