@@ -75,7 +75,16 @@ int Miller(p, powtuzenie)
 ### Kod Testu Millera-Rabina 
 [Test_Millera-Rabina.c](./Test_Millera-Rabina.c)
 
+###### Udowodnianie że jest poprawne:
+Kod jest uważany za poprawny, ponieważ dokładnie odpowiada algorytmowi testu pierwszości Millera-Rabina. Algorytm opiera się na Małym Twierdzeniu Fermata, które stwierdza, że jeśli n jest liczbą pierwszą, a a jest liczbą całkowitą taką, że 1 < a < n, to a^(n-1) ≡ 1 (mod n).
 
+W kodzie test polega na losowym wybraniu liczby „a” i sprawdzeniu, czy a^(n-1) ≡ 1 (mod n) czy nie. Jeśli tak nie jest, liczba jest uważana za złożoną. Kod implementuje również optymalizacje, takie jak podniesienie wyniku do kwadratu i podzielenie wykładnika przez 2 w każdej iteracji, aby zmniejszyć liczbę wymaganych obliczeń.
+
+Liczbę iteracji ( powtuzenie ) można dostosować, aby zwiększyć dokładność testu, przy czym większa liczba iteracji zwiększa prawdopodobieństwo poprawnego zidentyfikowania liczby pierwszej. Kod poprawnie implementuje wszystkie te elementy testu pierwszości Millera-Rabina, co czyni go poprawną implementacją.
+
+###### Złożoność czasowa
+
+Złożoność czasowa kodu to O(k log p), gdzie k to liczba wykonań testu pierwszości Millera-Rabina (powtuzenie w kodzie), a p to liczba testowana pod kątem pierwszości. Najbardziej czasochłonną operacją są modułowe funkcje potęgowania (modulo) i modularnego mnożenia (mulmod), których obliczenie zajmuje O (log p). Zatem ogólna złożoność czasowa kodu wynosi O(k log p).
 
 # Przykład używania
 
@@ -158,6 +167,19 @@ procedure computeLPSArray(pat, M, lps)
 
 ### Kod KMP
 [KMP.c](./KMP.c)
+
+###### Udowodnianie że jest poprawne:
+Kod jest implementacją algorytmu dopasowywania ciągów znaków Knutha-Morrisa-Pratta (KMP). Jest to algorytm wyszukiwania wzorców, który wykorzystuje informacje o kilku ostatnich znakach tekstu i wzorcu w najgorszej złożoności czasowej O(n + m), gdzie n to długość tekstu, a m to długość wzór. Kod jest poprawny, ponieważ wykonuje prawidłowe kroki algorytmu KMP:
+
+1. Oblicz tablicę najdłuższego właściwego sufiksu prefiksu (LPS) wzorca.
+2. Zainicjuj dwie zmienne i i j, aby przejść odpowiednio przez tekst i wzorzec.
+3. Jeśli znaki w i i j pasują do siebie, zwiększ zarówno i, jak i j.
+4. Jeśli znaki w i i j nie pasują do siebie, zaktualizuj j o wartość lps[j-1].
+5. Powtarzaj kroki 3 i 4, aż j będzie równe długości wzoru.
+6. Jeśli j stanie się równe długości wzoru, wydrukuj początkowy indeks wzoru w tekście.
+7. Powtórz proces od kroku 3, aby znaleźć wszystkie wystąpienia wzorca w tekście.
+
+Kod poprawnie realizuje powyższe kroki, dlatego można go uznać za poprawną implementację algorytmu KMP.
 
 ## Zlożoność programu 
 Funkcja KMPSearch najpierw oblicza tablicę Longest Proper Prefix-Suffix (LPS), co zajmuje O(m) czasu. Tablica LPS jest następnie używana do dopasowania wzorca do tekstu. Pętla while w funkcji KMPSearch działa n razy, a blok if-else wewnątrz pętli while zajmuje stały czas. Tak więc złożoność czasowa funkcji KMPSearch wynosi O(n + m).
