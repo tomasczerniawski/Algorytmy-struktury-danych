@@ -113,9 +113,9 @@ Zgodnie z testem fermata jest zbyt wielu kłamców dla wszystkich liczb Carmicha
 
 
 
-## Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu.
+# Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu.
 
-# Używałem KMP Algorytmu
+ Używałem KMP Algorytmu
 
  Używamy wartości z lps[], aby określić następną pozycję przesuwania. Kiedy porównujemy pat[j] z txt[i] i widzimy niezgodność, wiemy, że znaki pat[0..j-1] pasują do txt[i-j+1…i-1], wiemy też, że lps[j-1] znaki pat[0…j-1] są zarówno właściwym przedrostkiem, jak i sufiksem, co oznacza, że nie musimy dopasowywać tych znaków lps[j-1] do txt[i-j…i-1], ponieważ wiemy że te znaki i tak będą pasować.
  
