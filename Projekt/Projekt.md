@@ -99,7 +99,7 @@ Krok 5: dla j = 1, $S = x^{2q}$ mod p
          = 1 x 256 x 1 = 256
 teraz, = 256 ≠ 1
 
-**i wynik jest niejednoznaczny Zatem 341 nie jest liczbą złożoną.**
+###### i wynik jest niejednoznaczny Zatem 341 nie jest liczbą złożoną.
 
 ## Zalety
 
@@ -156,87 +156,9 @@ procedure computeLPSArray(pat, M, lps)
 }
 ```
 
-# Kod 
+### Kod KMP
+[KMP.c](./KMP.c)
 
-```
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
- 
-void computeLPSArray(char *pat, int M, int *lps);
- 
-void KMPSearch(char *pat, char *txt) {
-    int M = strlen(pat);
-    int N = strlen(txt);
- 
-    
-    int *lps = (int *) malloc(sizeof(int) * M);
-    int j = 0; 
- 
-   
-    computeLPSArray(pat, M, lps);
- 
-    int i = 0; 
-    while (i < N) {
-        if (pat[j] == txt[i]) {
-            j++;
-            i++;
-        }
- 
-        if (j == M) {
-            printf("Znaleziono na indeksie %d \n", i - j);
-            j = lps[j - 1];
-        }
- 
-    
-        else if (i < N && pat[j] != txt[i]) {
-           
-            if (j != 0)
-                j = lps[j - 1];
-            else
-                i = i + 1;
-        }
-    }
-    free(lps); 
-}
- 
-void computeLPSArray(char *pat, int M, int *lps) {
-    int len = 0; 
-    int i;
- 
-    lps[0] = 0; 
-    i = 1;
- 
-    
-    while (i < M) {
-        if (pat[i] == pat[len]) {
-            len++;
-            lps[i] = len;
-            i++;
-        } else 
-        {
-            if (len != 0) {
-                
-                len = lps[len - 1];
- 
-               
-            } else
-            {
-                lps[i] = 0;
-                i++;
-            }
-        }
-    }
-}
- 
-
-int main() {
-    char *txt = "ABABDABACDABABCABAB";
-    char *pat = "ABABCABAB";
-    KMPSearch(pat, txt);
-    return 0;
-}
-```
 ## Zlożoność programu 
 Funkcja KMPSearch najpierw oblicza tablicę Longest Proper Prefix-Suffix (LPS), co zajmuje O(m) czasu. Tablica LPS jest następnie używana do dopasowania wzorca do tekstu. Pętla while w funkcji KMPSearch działa n razy, a blok if-else wewnątrz pętli while zajmuje stały czas. Tak więc złożoność czasowa funkcji KMPSearch wynosi O(n + m).
 
@@ -255,7 +177,7 @@ W przypadkach, gdy szukasz bardzo długich ciągów (duże n) wewnątrz naprawd�
 
 Podobnie jak  Merge Sort, QuickSort jest algorytmem dziel i zwyciężaj. Wybiera element jako oś i dzieli podaną tablicę wokół wybranej osi. Istnieje wiele różnych wersji quickSort, które wybierają elementy przestawne na różne sposoby.
 
-## Szybkiego sortowania
+# Szybkiego sortowania
 
 Zawsze wybieraj pierwszy element jako oś obrotu.
 Zawsze wybieraj ostatni element jako oś obrotu
@@ -280,131 +202,9 @@ void QuickSort(node left, node right)
 }
 ```
 
-# Kod
+# Kod QuickSort
+[QuickSort.c](./QuickSort.c)
 
-```
-#include <stdio.h>
-#include <stdlib.h>
-  
-
-struct wezel
-{
-    int data;
-    struct wezel *next;
-    struct wezel *prev;
-};
-  
-
-void swap ( int* a, int* b )
-{ int t = *a; *a = *b; *b = t; }
-  
-
-struct wezel *lastNode(struct wezel *root)
-{
-    while (root && root->next)
-        root = root->next;
-    return root;
-}
-  
-
-struct wezel* przegroda(struct wezel *l, struct wezel *h)
-{
- 
-    int x = h->data;
-  
-   
-    struct wezel *i = l->prev;
-  
-    
-    for (struct wezel *j = l; j != h; j = j->next)
-    {
-        if (j->data <= x)
-        {
-          
-            i = (i == NULL) ? l : i->next;
-  
-            swap(&(i->data), &(j->data));
-        }
-    }
-    i = (i == NULL) ? l : i->next; 
-    swap(&(i->data), &(h->data));
-    return i;
-}
-  
-
-void _quickSort(struct wezel* l, struct wezel *h)
-{
-    if (h != NULL && l != h && l != h->next)
-    {
-        struct wezel *p = przegroda(l, h);
-        _quickSort(l, p->prev);
-        _quickSort(p->next, h);
-    }
-}
-  
-
-
-void quickSort(struct wezel *head)
-{
- 
-    struct wezel *h = lastNode(head);
-  
-    
-    _quickSort(head, h);
-}
-  
-
-void printList(struct wezel *head)
-{
-    while (head)
-    {
-        printf("%d ", head->data);
-        head = head->next;
-    }
-    printf("\n");
-}
-  
-
-void push(struct wezel** head_ref, int new_data)
-{
-    struct wezel* new_node = (struct wezel*) 
-               malloc(sizeof(struct wezel)); 
-    new_node->data = new_data;
-  
-   
-    new_node->prev = NULL;
-  
-    
-    new_node->next = (*head_ref);
-  
-   
-    if ((*head_ref) != NULL) (*head_ref)->prev = new_node ;
-  
-   
-    (*head_ref) = new_node;
-}
-  
-
-int main(int argc, char **argv)
-{
-    struct wezel *a = NULL;
-    push(&a, 5);
-    push(&a, 20);
-    push(&a, 4);
-    push(&a, 3);
-    push(&a, 30);
-  
-    printf("Linked List before sorting \n");
-    printList(a);
-  
-    quickSort(a);
-  
-    printf("Linked List after sorting \n");
-    printList(a);
-  
-    return 0;
-}
-```
 ## Zlozoność szybkiego Sortowania
 
 Złożoność czasowa szybkiego sortowania zależy od zastosowanej strategii podziału. W najgorszym przypadku element przestawny jest najmniejszym lub największym elementem na liście, co powoduje, że jedna partycja ma n-1 elementów, a druga zero elementów. Skutkowałoby to złożonością czasową O(n^2). Jednak w przeciętnym przypadku element przestawny dzieli listę mniej więcej na pół, co skutkuje złożonością czasową O(n log n).
