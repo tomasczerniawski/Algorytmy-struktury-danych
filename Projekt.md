@@ -1,3 +1,7 @@
+                                                 **Autor Tomas Czerniawski Student 2 roku Informatyki**
+   **2023-01-31**
+
+ 
  - Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina.
  
  - Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu. 
@@ -5,8 +9,7 @@
  - Algorytm szybkiego sortowania listy dwukierunkowej.
 
 
-                                   **Autor Tomas Czerniawski Student 2 roku Informatyki**
-
+                                 
  1. Test Millera-Rabina.
 
  Udostępnia on szybką metodę sprawdzania pierwszości liczby z możliwością kontrolowania poziomu prawdopodobieństwa popełnienia błędu – jest to zatem metoda probabilistyczna, zwana testem Millera-Rabina.
