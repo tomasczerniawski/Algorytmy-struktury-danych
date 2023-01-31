@@ -3,7 +3,7 @@
  ## Projekt do przedmiotu "Algorytmy i struktury danych"
  
  ## Data 2023-01-31
-$$x = {{b^2-4ac}}.$$
+
  
  - Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina.
  
