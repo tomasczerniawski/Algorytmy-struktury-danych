@@ -1,5 +1,8 @@
-                                                 **Autor Tomas Czerniawski Student 2 roku Informatyki**
-   **2023-01-31**
+## Autor Tomas Czerniawski Student 2 roku Informatyki
+
+ ## Projekt do przedmiotu "Algorytmy i struktury danych"
+ 
+ ## Data 2023-01-31
 
  
  - Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina.
@@ -10,7 +13,7 @@
 
 
                                  
- 1. Test Millera-Rabina.
+ # Test Millera-Rabina.
 
  Udostępnia on szybką metodę sprawdzania pierwszości liczby z możliwością kontrolowania poziomu prawdopodobieństwa popełnienia błędu – jest to zatem metoda probabilistyczna, zwana testem Millera-Rabina.
  
@@ -22,7 +25,7 @@ Niech p  będzie nieparzystą liczbą pierwszą zapisaną jako p  = 1 + 2 sd, gd
 
 Kończy się liczbą 1. Co więcej, jeśli a d  nie przystaje modulo p  do 1, to wyraz ciągu Millera-Rabina bezpośrednio poprzedzający 1 jest równy p  - 1.
 
-**Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina**
+## Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina
 
 Wejście:
 p	 –  	liczba badana na pierwszość, p  ∈ N, p  > 2, p  jest nieparzyste.
@@ -33,7 +36,7 @@ NIE , jeśli p  jest liczbą złożoną.
 
 
 
-Pseudo kod Testu Millera-Rabina
+# Pseudo kod Testu Millera-Rabina
 
 ```
 int Miller(p, powtuzenie)
@@ -69,7 +72,7 @@ int Miller(p, powtuzenie)
 }
 ```
 
-Kod Testu Millera-Rabina
+# Kod Testu Millera-Rabina
 
 ```
 #include <stdio.h>
@@ -155,7 +158,7 @@ int main()
 }
 ```
 
-Przykład używania
+# Przykład używania
 
 Korzystając z algorytmu Millera-Rabina, możemy przetestować liczbę 341 w następujący sposób −
 
@@ -177,10 +180,10 @@ Krok 5: dla j = 1, $S = x^{2q}$ mod p
          = 1 x 256 x 1 = 256
 teraz, = 256 ≠ 1
 
-**i wynik jest niejednoznaczny
-Zatem 341 nie jest liczbą złożoną.**
+# i wynik jest niejednoznaczny
+# Zatem 341 nie jest liczbą złożoną.
 
-**Zalety**
+## Zalety
 
 Algorytm ten może być używany do testowania pierwszorzędności dużych liczb.
 
@@ -192,14 +195,15 @@ Zgodnie z testem fermata jest zbyt wielu kłamców dla wszystkich liczb Carmicha
 
 
 
-**Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu.**
+## Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu.
 
-Używałem KMP Algorytmu
+# Używałem KMP Algorytmu
+
  Używamy wartości z lps[], aby określić następną pozycję przesuwania. Kiedy porównujemy pat[j] z txt[i] i widzimy niezgodność, wiemy, że znaki pat[0..j-1] pasują do txt[i-j+1…i-1], wiemy też, że lps[j-1] znaki pat[0…j-1] są zarówno właściwym przedrostkiem, jak i sufiksem, co oznacza, że nie musimy dopasowywać tych znaków lps[j-1] do txt[i-j…i-1], ponieważ wiemy że te znaki i tak będą pasować.
  
  ![image](https://user-images.githubusercontent.com/115027239/213924490-3feafbbd-2770-4ee0-a769-911217a51d14.png)
 
-**Pseudokod**
+## Pseudokod
 ```
 KMPSearch(pat, txt){
    
@@ -234,7 +238,7 @@ procedure computeLPSArray(pat, M, lps)
 }
 ```
 
-**Kod** 
+# Kod 
 
 ```
 #include<stdio.h>
@@ -315,7 +319,7 @@ int main() {
     return 0;
 }
 ```
-**Zlożoność programu**
+## Zlożoność programu 
 Funkcja KMPSearch najpierw oblicza tablicę Longest Proper Prefix-Suffix (LPS), co zajmuje O(m) czasu. Tablica LPS jest następnie używana do dopasowania wzorca do tekstu. Pętla while w funkcji KMPSearch działa n razy, a blok if-else wewnątrz pętli while zajmuje stały czas. Tak więc złożoność czasowa funkcji KMPSearch wynosi O(n + m).
 
 Złożoność przestrzenna tego algorytmu wynosi O(m), ponieważ używa on tablicy o rozmiarze m (lps) do przechowywania wartości LPS.
@@ -324,15 +328,17 @@ Funkcja computeLPSArray ma złożoność czasową równą O(m), ponieważ wykonu
 
 Ogólnie złożoność czasowa tego algorytmu KMP wynosi O(n + m), a złożoność przestrzenna to O(m).
 
- **Zaleta algorytmu KMP**
+ ## Zaleta algorytmu KMP
  
 KMP ma tę zaletę, że gwarantuje skuteczność w najgorszym przypadku. Czas przetwarzania wstępnego to zawsze O(n), a czas wyszukiwania to zawsze O(m). Nie ma najgorszych danych wejściowych.
 W przypadkach, gdy szukasz bardzo długich ciągów (duże n) wewnątrz naprawdę dużych ciągów (duże m), może to być bardzo pożądane w porównaniu z innymi algorytmami.
 
-**Algorytm szybkiego sortowania listy dwukierunkowej.**
+## Algorytm szybkiego sortowania listy dwukierunkowej.
 
 Podobnie jak  Merge Sort, QuickSort jest algorytmem dziel i zwyciężaj. Wybiera element jako oś i dzieli podaną tablicę wokół wybranej osi. Istnieje wiele różnych wersji quickSort, które wybierają elementy przestawne na różne sposoby.
-**Szybkiego sortowania**
+
+## Szybkiego sortowania
+
 Zawsze wybieraj pierwszy element jako oś obrotu.
 Zawsze wybieraj ostatni element jako oś obrotu
 Wybierz losowy element jako oś.
@@ -342,7 +348,7 @@ Kluczowym procesem w quickSort jest partition(). Celem partycji jest tablica i e
 ![image](https://user-images.githubusercontent.com/115027239/213930520-975ae9a5-472e-4a1d-b7c0-eef08d534574.png)
 
 
-**Pseudokod**
+## Pseudokod
 
 ```
 void QuickSort(node left, node right)
@@ -356,7 +362,7 @@ void QuickSort(node left, node right)
 }
 ```
 
-**Kod**
+# Kod
 
 ```
 #include <stdio.h>
@@ -481,7 +487,7 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
-**Zlozoność szybkiego Sortowania**
+## Zlozoność szybkiego Sortowania
 
 Złożoność czasowa szybkiego sortowania zależy od zastosowanej strategii podziału. W najgorszym przypadku element przestawny jest najmniejszym lub największym elementem na liście, co powoduje, że jedna partycja ma n-1 elementów, a druga zero elementów. Skutkowałoby to złożonością czasową O(n^2). Jednak w przeciętnym przypadku element przestawny dzieli listę mniej więcej na pół, co skutkuje złożonością czasową O(n log n).
 
