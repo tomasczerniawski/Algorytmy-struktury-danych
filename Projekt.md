@@ -3,7 +3,7 @@
  ## Projekt do przedmiotu "Algorytmy i struktury danych"
  
  ## Data 2023-01-31
-
+latex p = 1 + 2^sd
  
  - Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina.
  
@@ -180,8 +180,7 @@ Krok 5: dla j = 1, $S = x^{2q}$ mod p
          = 1 x 256 x 1 = 256
 teraz, = 256 ≠ 1
 
-# i wynik jest niejednoznaczny
-# Zatem 341 nie jest liczbą złożoną.
+**i wynik jest niejednoznaczny Zatem 341 nie jest liczbą złożoną.**
 
 ## Zalety
 
