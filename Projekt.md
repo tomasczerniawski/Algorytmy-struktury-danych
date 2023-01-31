@@ -3,7 +3,7 @@
  ## Projekt do przedmiotu "Algorytmy i struktury danych"
  
  ## Data 2023-01-31
-latex p = 1 + 2^sd
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
  
  - Algorytm sprawdzania pierwszości nieparzystej liczby naturalnej testem Millera-Rabina.
  
