@@ -235,7 +235,7 @@ Złożoność przestrzenna szybkiego sortowania wynosi O (log n), ponieważ wyko
 
 Należy zauważyć, że złożoność czasowa szybkiego sortowania zależy od wyboru elementu przestawnego. Losowe wybranie elementu przestawnego sprawi, że scenariusz przeciętnego przypadku będzie się powtarzał częściej.
 
-## ródła
+## Źriódła
 
 - [test Millera-Rabina](https://eduinf.waw.pl/inf/alg/001_search/0019.php)
 - [Szybkie wyszukiwanie wzorca algorytmem Knutha-Morrisa-Pratta](https://eduinf.waw.pl/inf/alg/001_search/0049.php)
