@@ -73,7 +73,7 @@ int Miller(p, powtuzenie)
 ```
 
 ### Kod Testu Millera-Rabina 
-[Test_Millera-Rabina.c](./Test_Millera-Rabina.c)
+[Programy_dla_Projektu](./Test_Millera-Rabina.c)
 
 
 
