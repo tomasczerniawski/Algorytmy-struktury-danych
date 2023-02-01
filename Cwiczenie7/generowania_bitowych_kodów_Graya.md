@@ -1,3 +1,9 @@
+//Tomas Czerniawski. Student
+
+// Algorytmow śledzenia wstecznego
+
+// 2023.02.01
+
 # Zadania z algorytmow śledzenia wstecznego
 
 Napisac pseudokody do programow pracy z wzorcamy.
