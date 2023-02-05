@@ -76,15 +76,16 @@ int Miller(p, powtuzenie)
 [Test_Millera-Rabina.c](./Test_Millera-Rabina.c)
 
 ###### Udowodnianie że jest poprawne:
-Kod jest uważany za poprawny, ponieważ dokładnie odpowiada algorytmowi testu pierwszości Millera-Rabina. Algorytm opiera się na Małym Twierdzeniu Fermata, które stwierdza, że jeśli n jest liczbą pierwszą, a a jest liczbą całkowitą taką, że 1 < a < n, to a^(n-1) ≡ 1 (mod n).
+Kod jest uważany za poprawny, ponieważ dokładnie odpowiada algorytmowi testu pierwszości Millera-Rabina. Algorytm opiera się na Małym Twierdzeniu Fermata, które stwierdza, że jeśli n jest liczbą pierwszą, a a jest liczbą całkowitą taką, że 1 < a < n, to a^{n-1} \equiv 1 \pmod{n}
 
-W kodzie test polega na losowym wybraniu liczby „a” i sprawdzeniu, czy a^(n-1) ≡ 1 (mod n) czy nie. Jeśli tak nie jest, liczba jest uważana za złożoną. Kod implementuje również optymalizacje, takie jak podniesienie wyniku do kwadratu i podzielenie wykładnika przez 2 w każdej iteracji, aby zmniejszyć liczbę wymaganych obliczeń.
+
+W kodzie test polega na losowym wybraniu liczby „a” i sprawdzeniu, czy a^{n-1} \equiv 1 \pmod{n} (mod n) czy nie. Jeśli tak nie jest, liczba jest uważana za złożoną. Kod implementuje również optymalizacje, takie jak podniesienie wyniku do kwadratu i podzielenie wykładnika przez 2 w każdej iteracji, aby zmniejszyć liczbę wymaganych obliczeń.
 
 Liczbę iteracji ( powtuzenie ) można dostosować, aby zwiększyć dokładność testu, przy czym większa liczba iteracji zwiększa prawdopodobieństwo poprawnego zidentyfikowania liczby pierwszej. Kod poprawnie implementuje wszystkie te elementy testu pierwszości Millera-Rabina, co czyni go poprawną implementacją.
 
 ###### Złożoność czasowa
 
-Złożoność czasowa kodu to O(k log p), gdzie k to liczba wykonań testu pierwszości Millera-Rabina (powtuzenie w kodzie), a p to liczba testowana pod kątem pierwszości. Najbardziej czasochłonną operacją są modułowe funkcje potęgowania (modulo) i modularnego mnożenia (mulmod), których obliczenie zajmuje O (log p). Zatem ogólna złożoność czasowa kodu wynosi O(k log p).
+Złożoność czasowa kodu to O(k \log p), gdzie k to liczba wykonań testu pierwszości Millera-Rabina (powtuzenie w kodzie), a p to liczba testowana pod kątem pierwszości. Najbardziej czasochłonną operacją są modułowe funkcje potęgowania (modulo) i modularnego mnożenia (mulmod), których obliczenie zajmuje O (log p). Zatem ogólna złożoność czasowa kodu wynosi O(k \log p).
 
 # Przykład używania
 
