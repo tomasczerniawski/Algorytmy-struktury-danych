@@ -245,7 +245,8 @@ Wybierz losowy element jako oś.
 Wybierz medianę jako oś obrotu.
 Kluczowym procesem w quickSort jest partition(). Celem partycji jest tablica i element x tablicy jako punkt obrotu, umieszczenie x na właściwej pozycji w posortowanej tablicy i umieszczenie wszystkich mniejszych elementów (mniejszych niż x) przed x i umieszczenie wszystkich większych elementów (większe niż x) po x. Wszystko to powinno odbywać się w czasie liniowym.
 
-![image](https://user-images.githubusercontent.com/115027239/213930520-975ae9a5-472e-4a1d-b7c0-eef08d534574.png)
+![Sort-Linked-List-768x384](https://user-images.githubusercontent.com/115027239/216835157-4a003ffd-dad1-4c76-87e2-214e0d4b10d9.png)
+
 
 
 ## Pseudokod
