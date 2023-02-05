@@ -87,13 +87,11 @@ Liczbę iteracji ( powtuzenie ) można dostosować, aby zwiększyć dokładnoś�
 
 Funkcja modulo (mod) jest to operator w języku programowania, który oblicza resztę z dzielenia dwóch liczb.
 
-Pseudokod:
-
 1. Przyjmij dwie liczby a i b.
-2. Oblicz a modulo b.
+2. Oblicza a modulo b.
 3. Zwróć resztę z dzielenia a przez b.
 
-Pseudokod w języku C:
+Pseudokod :
 ```
 int mod(int a, int b) {
 return a % b;
@@ -102,14 +100,12 @@ return a % b;
 
 Funkcja mulmod jest to funkcja, która oblicza iloczyn dwóch liczb i zwraca resztę z dzielenia wyniku przez określoną wartość.
 
-Pseudokod:
-
 1. Przyjmij trzy liczby a, b i m.
 2. Oblicz iloczyn a i b.
 3. Oblicz resztę z dzielenia wyniku przez m.
 4. Zwróć resztę.
 
-Pseudokod w języku C:
+Pseudokod :
 ```
 int mulmod(int a, int b, int m) {
 return (a * b) % m;
