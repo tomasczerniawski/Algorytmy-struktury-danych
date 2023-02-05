@@ -198,6 +198,14 @@ procedure computeLPSArray(pat, M, lps)
 ### Kod KMP
 [KMP.c](./KMP.c)
 
+#### Czy KMP.c dziala poprawnie?
+
+Tak, to jest poprawna implementacja algorytmu KMP. Algorytm ten wyszukuje wszystkie wystąpienia podłańcucha (wzorca) w głównym łańcuchu tekstu. Jest to poprawne, ponieważ używa algorytmu preprocessing LPS (Longest Proper Prefix Suffix), aby zoptymalizować wyszukiwanie wzorca. Algorytm KMP jest szybszy niż algorytm wyszukiwania bruteforce, ponieważ nie przeszukuje całego tekstu od początku, jeśli nie znajdzie pasującego znaku. Zamiast tego, używa informacji z preprocessingu LPS do określenia, gdzie można kontynuować wyszukiwanie wzorca, jeśli nie znajdzie on pasującego znaku.
+
+#### Czy 'Algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu' jest zwiazany z Knutha-Morrisa-Pratta?
+
+Tak, algorytm wyszukiwania najdłuższego sufiksu pasującego do prefiksu w drugim łańcuchu jest związany z algorytmem Knutha-Morrisa-Pratta. Algorytm Knutha-Morrisa-Pratta jest wykorzystywany do wyszukiwania wzorca w tekście i opiera się na konceptach sufiksu i prefiksu. W algorytmie KMP, najdłuższy sufiks, który jest jednocześnie prefiksem, jest używany jako punkt orientacyjny do szybszego wyszukiwania wzorca w tekście.
+
 ###### Udowodnianie że jest poprawne:
 Kod jest implementacją algorytmu dopasowywania ciągów znaków Knutha-Morrisa-Pratta (KMP). Jest to algorytm wyszukiwania wzorców, który wykorzystuje informacje o kilku ostatnich znakach tekstu i wzorcu w najgorszej złożoności czasowej O(n + m), gdzie n to długość tekstu, a m to długość wzór. Kod jest poprawny, ponieważ wykonuje prawidłowe kroki algorytmu KMP:
 
